@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
     <link rel="stylesheet" href="dist/theme/league.css" />
+    <link rel="stylesheet" href="resources/programming-langs.css" />
 
     <style>
       @font-face {
@@ -54,6 +55,11 @@
         to {
           rotate: 360deg;
         }
+      }
+
+      #langs > img {
+        width: 100px;
+        padding: 20px;
       }
 
       /* TODO: use emojis for ul and ol */
@@ -138,7 +144,6 @@
           <ul>
             <li>النظام المدمج هو تركيبة من العتاد الصلب Hardware</li>
             <li class="fragment">وال Drivers</li>
-            <li class="fragment fade-up">والأكواد والبرمجيات</li>
             <li class="fragment fade-up">والأكواد والبرمجيات</li>
             <li class="fragment fade-up">
               لا تكون الأنظمة المدمجة قائمة بذاتها ولكن تتواصل مع ملحقات
@@ -372,22 +377,133 @@
           <!-- TODO: https://www.oreilly.com/library/view/programming-embedded-systems/0596009836/httpatomoreillycomsourceoreillyimages70202.png -->
         </section>
 
-        <section>
+        <section data-transition="fade-in slide-out">
           <!-- TODO (image: software programming vs embedded system programming) -->
         </section>
 
-        <section>
+        <section data-transition="fade-out slide-in">
           <h2>Embedded system</h2>
           <p>vs</p>
           <h2>Software engineering</h2>
         </section>
 
         <section>
-          
+          مبرمج الأنظمة المدمجة ومبرمج تطبيقات سطح المكتب أو تطبيقات الهواتف
+          يجمع بينها أنها يكتبان الأكواد وربما يكتب كلا منها بنفس اللغة لكن يفرق
+          بينهما أمور عديدة
+        </section>
+
+        <section>
+          <h1>🤏</h1>
+        </section>
+
+        <section>
+          <ol>
+            <li>
+              مبرمج الأنظمة المدمجة لديه مصادر محدودة وسعة ذاكرة كل كلمة (بايت)
+              فيها بل كل حرف (بيت) له قيمة لابد من عدم إهدارها
+            </li>
+            <li class="fragment fade-up">يحده إمكانيات المعالج</li>
+            <li class="fragment fade-up">
+              يتعامل مع العالم الخارجي ويحتك به على عكس مبرمج التطبيقات الذي
+              ينحسب داخل قوقعة الأكواد والعالم الافتراضي
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              فيتعامل مبرمج الأنظمة المدمجة مع المدخلات من المستشعرات Sensors
+              والملحقات Peripherals. كما أن لكن منها طريقة تعامل مختلفة فليس كل
+              مستشعر يُتعامل معه ويُقرأ منه كصاحبه.
+            </li>
+            <li class="fragment fade-left">
+              يكتب الكود ليعيش، إذ أنه يكتب الكود وفي تصوراته أنه سيعمل لسنين
+              طويلة دون مشاكل وأخطاء... ومبرمج الأنظمة المدمجة أكثر تركيزا في
+              هذا الجانب من مبرمج التطبيقات
+            </li>
+          </ul>
+        </section>
+
+        <section id="langs">
+          <!-- TODO: auto-animate with the plugin -->
+          <img src="resources/languages/typescript.svg" />
+          <img src="resources/languages/lua.svg" />
+          <img src="resources/languages/css.svg" />
+          <img src="resources/languages/html.svg" />
+          <img src="resources/languages/java.svg" />
+          <img src="resources/languages/javascript.svg" />
+          <img src="resources/languages/swift.svg" />
+          <img src="resources/languages/ruby.svg" />
+          <img src="resources/languages/r.svg" />
+          <img src="resources/languages/python.svg" />
+          <img src="resources/languages/php.svg" />
+          <img src="resources/languages/kotlin.svg" />
+          <img src="resources/languages/go.svg" />
+          <img src="resources/languages/rust.png" />
+          <img src="resources/languages/ada.png" />
+          <img src="resources/languages/c.svg" />
+          <img src="resources/languages/cpp.svg" />
+          <img src="resources/languages/csharp.svg" />
+        </section>
+
+        <section>
+          <h1>7️⃣0️⃣0️⃣➕</h1>
+        </section>
+
+        <section data-background="resources/wondering.gif">
+          <h2 style="background-color: rgba(0, 0, 0, 0.664)">
+            أي لغات البرمجة أستعمل؟ 🤔
+          </h2>
+        </section>
+
+        <section>
+          <img src="resources/languages/c.svg" width="200" />
+          <p>
+            هي لغة برمجة عالية المستوى high-level ومنخفضة المستوى low-level
+            نسبيا في نفس الوقت إذ أنها توفر لنا تفاعلا مباشرا مع العتاد الصلب
+            Hardware
+          </p>
+        </section>
+        <section>
+          <img src="resources/languages/cpp.svg" width="200" />
+          <p>
+            بنيت على ال C وكان الهدف إنشاء مزايا إضافيه مثل البرمجة كائنية
+            التوجه Object oriented programming OOP. يمكنها التواصل مع العتاد
+            Hardware وتقدم حزمة من الوظائف والمزايا الأخرى الغير موجودة في ال C
+            بطريقة مباشرة ومستخدمة في الأنظمة المدمجة
+          </p>
+        </section>
+        <section>
+          <img src="resources/languages/forth.png" width="200" />
+          <p>
+            هي لغة توفر التواصل المباشر مع العتاد لكنها أصعب وأكثر تعقيدا من ال
+            C
+          </p>
+        </section>
+        <section>
+          <img src="resources/languages/ada.png" width="200" />
+          <p>
+            لغة أنتجها Defense Department of U.S. وتستخدم في الأنظمة المدمجة
+            وتوفر أسلوبا صارما يضمن سلامة الكود من المشكلات على قدر الإمكان حيث
+            تستخدم هذه اللغة في المركبات والأجهزة العسكرية والأقمار الصناعية
+            لكنها تفقد شهرتها ويقل استخدامها على حساب لغات أخرى
+          </p>
+        </section>
+        <section>
+          <img src="resources/languages/rust.png" width="200" />
+          <p>
+            هي لغى في شبابها وجديدة نسبيا وتوفر مزايا توفرها لفة السي مثل
+            التواصل مع العتاد لكنها توفر طريقة أفضل للأمان والتعامل مع الذاكرة
+            العشوائية كما أنها أسرع في بعض الأحيان من ال C
+          </p>
         </section>
       </div>
     </div>
-
+    <!-- TODO: more info about forth -->
+    <!-- TODO: what is a us defense department -->
+    <!-- TODO: add some code with animation -->
     <script src="dist/reveal.js"></script>
     <script src="plugin/zoom/zoom.js"></script>
     <script src="plugin/notes/notes.js"></script>

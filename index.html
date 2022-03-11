@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" />
+
+    <style>
+      @font-face {
+        font-family: "Markazi";
+        src: url("resources/fonts/markazi/MarkaziText-VariableFont_wght.ttf")
+          format("truetype");
+      }
+
+      :root {
+        --r-main-font: "Markazi";
+      }
+
+      .reveal.rtl .slides,
+      .reveal.rtl .slides h1,
+      .reveal.rtl .slides h2,
+      .reveal.rtl .slides h3,
+      .reveal.rtl .slides h4,
+      .reveal.rtl .slides h5,
+      .reveal.rtl .slides h6 {
+        font-family: "Markazi";
+      }
+
+      #zageng-logo {
+        position: absolute;
+        z-index: 1000;
+        top: 15px;
+        left: 15px;
+        width: 65px;
+        animation: rotate 30s linear infinite;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      @keyframes rotate {
+        from {
+          rotate: 0deg;
+        }
+
+        to {
+          rotate: 360deg;
+        }
+      }
+
+      /* TODO: use emojis for ul and ol */
+    </style>
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <img id="zageng-logo" src="resources/zageng.png" />
+      <div class="slides">
+        <!-- source: https://media.itpro.co.uk/image/upload/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1605629278/itpro/shutterstock_cpu_processor_abstract.jpg -->
+        <section
+          data-background="./resources/intro.png"
+          data-transition="convex"
+        >
+          <h2 style="background-color: black; color: white">
+            البرمجة في الأنظمة المدمجة
+          </h2>
+          <p style="background-color: rgba(0, 0, 0, 0.7)">
+            محمد سمير - الفرقة التانية كهربا
+          </p>
+          <p style="background-color: rgba(0, 0, 0, 0.7)">
+            محمود حسن - الفرقة التانية ميكا
+          </p>
+        </section>
+
+        <section>
+          <h3>لماذا العربية في التقديم؟</h3>
+          <p>
+            في البداية نتسآل عن سبب استخدام العربية في هذا التقديم.... وصراحة
+            كنت أريد البدء في تبرير لما استخدمت العربية لكن انتبهت إن المفروض أن
+            يكون السؤال لمن استخدم الإنجليزية لخطاب أناس لغتهم الأم هي العربية
+            وهو أيضا مثلهم
+          </p>
+        </section>
+
+        <section>
+          <h1>الحاسوب Computer</h1>
+          <h3 class="fragment">ما هو الحاسوب؟</h3>
+        </section>
+
+        <section>
+          <section>
+            <img src="./resources/computers/1.png" />
+          </section>
+          <section>
+            <img src="./resources/computers/2.png" />
+          </section>
+          <section>
+            <img src="./resources/computers/3.png" />
+          </section>
+          <section>
+            <img src="./resources/computers/4.png" />
+          </section>
+          <section>
+            <img src="./resources/computers/5.png" />
+          </section>
+        </section>
+
+        <section>
+          <img src="./resources/computers/6.png" />
+        </section>
+
+        <section>
+          ينتج حوالي 6️⃣ ستة مليارات معالج microprocessor في العام
+          <p class="fragment fade-up">
+            ومنهم فقط
+            <span class="fragment highlight-red grow">٢٪</span> يستخدموا في
+            الحواسيب الشخصية والحواسيب عامة المقصد general-purpose computers
+          </p>
+        </section>
+
+        <section data-background="#4d7e65" data-background-transition="zoom">
+          <h1>النظام المدمج</h1>
+          <p>Embedded system</p>
+          <h3 class="fragment fade-down">ما هو النظام المدمج؟</h3>
+        </section>
+
+        <section>
+          <ul>
+            <li>النظام المدمج هو تركيبة من العتاد الصلب Hardware</li>
+            <li class="fragment">وال Drivers</li>
+            <li class="fragment fade-up">والأكواد والبرمجيات</li>
+            <li class="fragment fade-up">والأكواد والبرمجيات</li>
+            <li class="fragment fade-up">
+              لا تكون الأنظمة المدمجة قائمة بذاتها ولكن تتواصل مع ملحقات
+              Peripherals
+            </li>
+            <li class="fragment fade-up">
+              وتأخد المدخلات من المستشعرات Sensors البيانات للتخذ القرارات على
+              إثرها
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <!-- TODO (image pc vs embedded system) -->
+          - اختصارا، النظام المدمج هو حاسوب ليس للأغراض العامة مثل جهازك الشخصي
+          الذي لا يدري المصنع فيما ستسخدمه، سواءا كان في لعب PES أو FIFA أو أن
+          تستخدمه في استضافة المواقع والحوسبة السحابية، أو أن تستخدمه في كتابة
+          تقرير طلبه منك دكتور مادة من المواد التي لا تطيقها في الكلية...
+          <br />
+          - أما النظام المدمج فهو نظام مصمم بداية من العتاد الصلب وصولا للأكواد
+          والبرمجيات ليؤدي الوظيفة التي أرادها المصنع (أو يأمل المصنع أن يوديها
+          النظام المدمج 🙂)
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              اختصارا، النظام المدمج هو حاسوب ليس للأغراض العامة مثل جهازك
+              الشخصي الذي لا يدري المصنع فيما ستسخدمه، سواءا كان في لعب PES أو
+              FIFA أو أن تستخدمه في استضافة المواقع والحوسبة السحابية، أو أن
+              تستخدمه في كتابة تقرير طلبه منك دكتور مادة من المواد التي لا
+              تطيقها في الكلية...
+            </li>
+            <li class="fragment fade-up">
+              أما النظام المدمج فهو نظام مصمم بداية من العتاد الصلب وصولا
+              للأكواد والبرمجيات ليؤدي الوظيفة التي أرادها المصنع (أو يأمل
+              المصنع أن يوديها النظام المدمج 🙂)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <!-- TODO (image: IC vs Embedded system) -->
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              كما ذكرنا أمثلة مسبقة عن أنظمة مدمجة نعتمد عليها في حياتنا وتحيط
+              بنا في المقدمة، يمكن أن يستبدل بالنظام المدمج الذي هو تركيبة من
+              العتاد Hardware وبرمجيات Software، الدائرة مدمجة Integrated
+              circuit IC لكن النظام المدمج أكثر مرونة من ال IC التي تصمم كل
+              العمليات في دائرة خاصة تؤدي وظيفتها المحددة لها فحسب
+            </li>
+            <li class="fragment fade-right">
+              في النبذة التاريخية التالية سنتحدث عن موضوع ال IC والفرق بينها
+              وبين الأنظمة المدمجة
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>نبذة تاريخية</h1>
+          <p></p>
+        </section>
+
+        <section>
+          <!-- TODO (image: big bang) -->
+          <p class="fragment fade-up">
+            بدأت القصة عندما أذن الله للانفجار العظيم أن يحدث منذ 13 مليار سنة
+            ،والله أعلم، ومنذ أربعة مليارات ونص المليار تقريبا بدأ كوكبنا الجميل
+            في التكون ...........
+          </p>
+        </section>
+
+        <section>
+          <!-- TODO (busicom image) -->
+          <p>
+            في أواخر السبعينبات كان الآلات الحاسبة calculator تشغل جزءا كبيرا من
+            التصنيع والإهتمام كما هي الهواتف الذكية اليوم. ومن الشركات المصنعة
+            لهذه الآلات شركة Busicom وكانت تعتمد في آلاتها الحاسبة على الدوائر
+            المدمجة Integrated ciruit IC
+          </p>
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              في عام 1969م طلبت شركة بيزيكم كم Intel أن تصمم لها دائرة مدمجة لكن
+              نموذج ونوع من الآلات الحاسبة
+            </li>
+            <li class="fragment fade-right">
+              فكان رد إنتل عليها بالمعالج إنتل 4004 والذي هو أول معالج
+              microprocessor نعرفه وكان هذا في عام 1971م ثم ها نحن هنا تحاصرنا
+              المعالجات والأنظمة المدمجة في بيتنا ووسائل النقل والشوراع بعد مرور
+              نصف قرن.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <!-- TODO: better resolution -->
+          <img src="resources/4004-chip.png" />
+        </section>
+
+        <section data-background="#4d7e65" data-background-transition="zoom">
+          <h1>مما يتكون النظام المدمج</h1>
+        </section>
+
+        <section>
+          يمكننا أن ننظر للنظام المدمج على أنه تركيبة من طبقات يعتمد بعضها على
+          الآخر لتؤدي الوظيفة المخصصة لها
+
+          <ol>
+            <li class="fragment fade-down">العتاد الصلب Hardware</li>
+            <li class="fragment fade-right">وطبقة من الأوامر Software</li>
+            <li class="fragment fade-left">
+              وهذه الأوامر تحتاج أن تجد لها مساحة تخزين يقرأ منها
+            </li>
+            <li class="fragment fade-up">المعالج هذه الأموار وينفذها</li>
+          </ol>
+        </section>
+
+        <section>
+          <!-- TODO: https://www.oreilly.com/library/view/programming-embedded-systems/0596009836/httpatomoreillycomsourceoreillyimages70200.png -->
+        </section>
+
+        <section>
+          <h2>المعالج</h2>
+          <h3 class="fragment fade-up">processor</h3>
+        </section>
+
+        <section>
+          <!-- TODO: processor image -->
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              سلف أن ذكرنا أن أول معالج كان من تصنيع Intel وهو المعالج 4004 الذي
+              صنعته في 1971. المعالج هو العقل الذي ينفذ الأوامر المقررة له.
+            </li>
+            <li class="fragment fade-up">
+              تُحسب قوة المعالج استنادا على كم من ملايين العمليات في الثانية
+              يقدر أن ينفذها المعالج Million of instructions per second أو
+              اختصارا نقول عليها MIPS. فالمعالج ذو 10 MIPS أقوى من العالج ذي 5
+              MIPS وقِس على هذا
+            </li>
+            <li class="fragment fade-right">
+              في الحواسيب الشخصية نجد أن المعمارية الأكثر استخداما هي 32-bit أو
+              معمارية ال 64-bit مع أن الثاني أكثر انتشارا في هذه الأيام. لكن في
+              الأنظمة المدمجة فالأمر أبسط من هذا فيستخدم غالبا 4-bit, 8-bit أو
+              16-bit.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>الذاكرة</h2>
+          <h3 class="fragment fade-up">memory</h3>
+        </section>
+
+        <section>
+          <!-- TODO: memory image -->
+        </section>
+
+        <section>
+          <p>
+            لتخزين الأوامر والبيانات المطلوبة وأيضا المدخلات التي تدخل لا بد من
+            وجد مساحة تخزين ويمكن أن تكون
+          </p>
+          <ul>
+            <li class="fragment fade-right fade-in">
+              ذاكرة عشوائية Random access memory RAM
+            </li>
+            <li class="fragment fade-up">
+              ذاكرة للقراءة فقط Read-only memory والتي لا يمكن تغيير البيانات
+              بها
+            </li>
+            <li class="fragment fade-up">
+              يمكن الاستغناء عن الذاكرة الخارجية ويستخدم ذاكرة ضمن المعالج نفسه
+              إذا كانت متطلبات requirements لا تحتاج لذاكرة كبيرة نسبيا
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              واعتمادا على اتساع السجل register في المعالج نجد حدودا للذاكرة
+              التي يمكن توفيرها، فالأوامر تُقرأ من مكانها وعنوانها في الذاكرة
+              وهذا المكان أو العنوان يُخزن في السجلات في المعالج فيقرأ المعالج
+              عنوان الأوامر ليجلبها من الذاكرة
+            </li>
+            <li>
+              فمثلا لو أن اتساع السجل في المعالج register width هو 16 bits فقط
+              فإن أقصى قيمة للذاكرة يمكن توفيرها هي 64KB أي $2^16$
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>المدخلات والمخرجات</h2>
+          <h3 class="fragment fade-up">input and output</h3>
+        </section>
+
+        <section>
+          <!-- TODO: peripherals and sensors image -->
+        </section>
+
+        <section>
+          <ul>
+            <li>
+              تدخل المدخلات عن طريق المستشعرات Sensors أو الملحقات Peripherals
+              ليستقبلها النظام المدمج ويجري عليها عملياته الحسابيه مستخدما
+              المعالجات والذاكرة
+            </li>
+            <li>
+              ثم يخرج الخرج الجديد اعتمادا على الدخل والذي يعتمد أيضا على أمور
+              أخرى منها الوقت مثلا، فينتج النظام المدمج خرجا اعتمادا على الوقت
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>البرمجيات</h2>
+          <h3 class="fragment fade-up">software</h3>
+        </section>
+
+        <section>
+          <!-- TODO: https://www.oreilly.com/library/view/programming-embedded-systems/0596009836/httpatomoreillycomsourceoreillyimages70202.png -->
+        </section>
+
+        <section>
+          <!-- TODO (image: software programming vs embedded system programming) -->
+        </section>
+
+        <section>
+          <h2>Embedded system</h2>
+          <p>vs</p>
+          <h2>Software engineering</h2>
+        </section>
+
+        <section>
+          
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        rtl: true,
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealZoom,
+          RevealSearch,
+        ],
+        // keyboard: {
+        //   39: "previous",
+        //   37: "next",
+        // }
+      });
+    </script>
+  </body>
+</html>

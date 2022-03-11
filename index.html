@@ -57,9 +57,11 @@
         }
       }
 
-      #langs > img {
-        width: 100px;
-        padding: 20px;
+      #langs {
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr);
+        place-items: center;
+        gap: 10px;
       }
 
       /* TODO: use emojis for ul and ol */
@@ -426,30 +428,148 @@
           </ul>
         </section>
 
-        <section id="langs">
-          <!-- TODO: auto-animate with the plugin -->
-          <img src="resources/languages/typescript.svg" />
-          <img src="resources/languages/lua.svg" />
-          <img src="resources/languages/css.svg" />
-          <img src="resources/languages/html.svg" />
-          <img src="resources/languages/java.svg" />
-          <img src="resources/languages/javascript.svg" />
-          <img src="resources/languages/swift.svg" />
-          <img src="resources/languages/ruby.svg" />
-          <img src="resources/languages/r.svg" />
-          <img src="resources/languages/python.svg" />
-          <img src="resources/languages/php.svg" />
-          <img src="resources/languages/kotlin.svg" />
-          <img src="resources/languages/go.svg" />
-          <img src="resources/languages/rust.png" />
-          <img src="resources/languages/ada.png" />
-          <img src="resources/languages/c.svg" />
-          <img src="resources/languages/cpp.svg" />
-          <img src="resources/languages/csharp.svg" />
+        <section
+          id="langs"
+          data-auto-animate
+          data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+        >
+          <img style="width: 50px" src="resources/languages/typescript.svg" />
+          <img style="width: 50px" src="resources/languages/lua.svg" />
+          <img style="width: 50px" src="resources/languages/css.svg" />
+          <img style="width: 50px" src="resources/languages/html.svg" />
+          <img style="width: 50px" src="resources/languages/java.svg" />
+          <img style="width: 50px" src="resources/languages/javascript.svg" />
+          <img style="width: 50px" src="resources/languages/swift.svg" />
+          <img style="width: 50px" src="resources/languages/ruby.svg" />
+          <img style="width: 50px" src="resources/languages/r.svg" />
+          <img style="width: 50px" src="resources/languages/python.svg" />
+          <img style="width: 50px" src="resources/languages/php.svg" />
+          <img style="width: 50px" src="resources/languages/kotlin.svg" />
+          <img style="width: 50px" src="resources/languages/go.svg" />
+          <img style="width: 50px" src="resources/languages/rust.png" />
+          <img style="width: 50px" src="resources/languages/ada.png" />
+          <img style="width: 50px" src="resources/languages/c.svg" />
+          <img style="width: 50px" src="resources/languages/cpp.svg" />
+          <img style="width: 50px" src="resources/languages/csharp.svg" />
+        </section>
+        <section
+          id="langs"
+          data-auto-animate
+          data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+        >
+          <img
+            data-auto-animate-delay="0"
+            style="width: 100px"
+            src="resources/languages/typescript.svg"
+          />
+          <img
+            data-auto-animate-delay="0.1"
+            style="width: 100px"
+            src="resources/languages/lua.svg"
+          />
+          <img
+            data-auto-animate-delay="0.2"
+            style="width: 100px"
+            src="resources/languages/css.svg"
+          />
+          <img
+            data-auto-animate-delay="0.3"
+            style="width: 100px"
+            src="resources/languages/html.svg"
+          />
+          <img
+            data-auto-animate-delay="0.4"
+            style="width: 100px"
+            src="resources/languages/java.svg"
+          />
+          <img
+            data-auto-animate-delay="0.5"
+            style="width: 100px"
+            src="resources/languages/javascript.svg"
+          />
+          <img
+            data-auto-animate-delay="0.6"
+            style="width: 100px"
+            src="resources/languages/swift.svg"
+          />
+          <img
+            data-auto-animate-delay="0.7"
+            style="width: 100px"
+            src="resources/languages/ruby.svg"
+          />
+          <img
+            data-auto-animate-delay="0.8"
+            style="width: 100px"
+            src="resources/languages/r.svg"
+          />
+          <img
+            data-auto-animate-delay="0.9"
+            style="width: 100px"
+            src="resources/languages/python.svg"
+          />
+          <img
+            data-auto-animate-delay="1.0"
+            style="width: 100px"
+            src="resources/languages/php.svg"
+          />
+          <img
+            data-auto-animate-delay="1.1"
+            style="width: 100px"
+            src="resources/languages/kotlin.svg"
+          />
+          <img
+            data-auto-animate-delay="1.2"
+            style="width: 100px"
+            src="resources/languages/go.svg"
+          />
+          <img
+            data-auto-animate-delay="1.3"
+            style="width: 100px"
+            src="resources/languages/rust.png"
+          />
+          <img
+            data-auto-animate-delay="1.4"
+            style="width: 100px"
+            src="resources/languages/ada.png"
+          />
+          <img
+            data-auto-animate-delay="1.5"
+            style="width: 100px"
+            src="resources/languages/c.svg"
+          />
+          <img
+            data-auto-animate-delay="1.6"
+            style="width: 100px"
+            src="resources/languages/cpp.svg"
+          />
+          <img
+            data-auto-animate-delay="1.7"
+            style="width: 100px"
+            src="resources/languages/csharp.svg"
+          />
         </section>
 
         <section>
           <h1>7️⃣0️⃣0️⃣➕</h1>
+        </section>
+
+        <section>
+          <pre
+            data-id="code-animation"
+          ><code class="hljs" data-trim data-line-numbers="|1|3,4|6-8|10-12"><script type="text/template">
+            import React, { useState } from 'react';
+
+            let a = 1;
+            const b = "constant";
+
+            function theFunction() {
+              // do something
+            }
+
+            class TheClass() {
+              // some stuff here
+            }
+					</script></code></pre>
         </section>
 
         <section data-background="resources/wondering.gif">
